@@ -19,8 +19,30 @@
             //  ReadLineEx obj = new ReadLineEx();
             //  obj.ReadLineMethod();
 
-            Parsing parsing = new Parsing();
-            parsing.ParsingMethod();
+            //  Parsing parsing = new Parsing();
+            //  parsing.ParsingMethod();
+
+            ///  Nullables obj = new Nullables();
+            //  obj.TestNullable();
+
+            ClassExample obj = new ClassExample();
+            obj.Add();
+            obj.Sub();
+            obj.Mul(243, 3);
+
+            obj.Mul(y: 34, x: 2);   // Named Arguments
+            obj.Div();
+
+            obj.Test("Test", "Hyd");
+            int myres = obj.Addition();  // myres = z
+            if (myres == 49)
+            {
+                Console.WriteLine("do this");
+            }
+            else
+            {
+                Console.WriteLine("do that");
+            }
         }
     }
 }
