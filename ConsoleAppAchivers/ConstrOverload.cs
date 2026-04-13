@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Formats.Tar;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,10 @@ namespace ConsoleAppAchivers
     {
         public ConstrOverload()  // implict , auto
         {
+
+            //Parent p = new();
+            //p.x = 56;
+            //p.Add();
             Console.WriteLine("0 PM Constructor default constr , impluct");
         }
         public ConstrOverload(string name)  // explict

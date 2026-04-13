@@ -66,7 +66,29 @@ namespace ConsoleAppAchivers
             //  
             // StaticConstrExample.DisplayMessage();
 
-            ConstrExample obj = new ConstrExample(4);
+            // ConstrExample obj = new ConstrExample(4);
+
+            // Parent p = new Parent();
+            // p.Add();
+            // p.Sub();
+
+            // Child c = new Child();
+            // c.Mul();
+            // c.Div();
+            // c.Add();
+            // c.Sub();
+
+            // Class2 c2= new Class2();
+
+            //EmployeeDetailsAdminDept c = new EmployeeDetailsAdminDept();
+            //c.EmpCount();
+            //c.Salary();
+            //c.Projects();
+
+
+            BMW1 b1 = new BMW1();
+            b1.Break(); // p or c
+
         }
     }
 }
