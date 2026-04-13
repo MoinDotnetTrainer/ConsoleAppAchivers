@@ -47,5 +47,27 @@ namespace ConsoleAppAchivers
             Console.WriteLine("Add is from Int return:" + z);
             return z;
         }
+
+        //public void Test() {
+        //    return 12;
+        //}
+
+        public string Test1()
+        {
+
+            Static obj = new Static();
+            obj.M1();
+            return "Test";
+        }   
+
+        public float Test2()
+        {
+            return 12.34f;
+        }   
+
+        public char Test3()
+        {
+            return 'A';
+        }       
     }
 }
