@@ -7,4 +7,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ClassLibraryAchivers">
+      <HintPath>..\..\ClassLibraryAchivers\ClassLibraryAchivers\bin\Debug\net8.0\ClassLibraryAchivers.dll</HintPath>
+    </Reference>
+    <Reference Include="MyData">
+      <HintPath>..\..\ClassLibraryAchivers\MyData\bin\Debug\net8.0\MyData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

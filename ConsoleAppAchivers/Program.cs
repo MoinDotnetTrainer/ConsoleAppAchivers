@@ -1,4 +1,11 @@
-﻿using System.Net.Http.Headers;
+﻿
+
+using System.Net.Http.Headers;  //predefine namespace
+using ClassLibrary1; //userdefine namespace
+using ClassLibraryAchivers;
+
+using MyData;
+
 
 namespace ConsoleAppAchivers
 {
@@ -6,6 +13,8 @@ namespace ConsoleAppAchivers
     {
         static void Main(string[] args)
         {
+
+            MyClass1 obj = new MyClass1();
             //Console.WriteLine("Hello, World!");
             //Console.WriteLine("Test");
             //Console.WriteLine("We are ABout to Start C#");
@@ -85,10 +94,58 @@ namespace ConsoleAppAchivers
             //c.Salary();
             //c.Projects();
 
+            // BMW1 b1 = new BMW1();
+            // b1.Break(); // p or c
 
-            BMW1 b1 = new BMW1();
-            b1.Break(); // p or c
+            //Products p = new Products();
+            //p.ProductPrice();
+            //p.ProductDetails();
 
+
+            //Orders o = new Orders();
+            //o.OrdersPrice();
+            //o.OrderDetails(12,2);  // ANother class with static method and this keyword to acheive extension method
+
+            //OrderExten.OrderDetails(o, 12, 2); // we can also call the static method of another class by passing the object as parameter
+
+            // CalbyValRef obj = new CalbyValRef();
+            //int res = obj.Data1();
+            //int result = obj.Data2();
+
+            //(int x, string y) = obj.Data3();
+            //Console.WriteLine(x);
+            //Console.WriteLine(y);
+
+            //obj.Cal(12, 2, out int Sum, out int Sub);
+            //Console.WriteLine(Sum);  // 14
+            //Console.WriteLine(Sub); //10
+
+            //   obj.Exe();
+
+            //Excep obj = new Excep();
+            //obj.RunTimeError();
+
+
+
+            //try
+            //{
+            //    Prop obj = new Prop();
+            //    obj.x_ = 34;
+            //    obj.y_ = 34;  // no Seciurity
+            //    obj.Add();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+            ////p150 p2 50 = 100
+
+
+            AccProject acc = new AccProject();
+            acc.Loreal();
+
+            Mobile m = new Mobile();
+            m.MobileData();
         }
     }
 }
