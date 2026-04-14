@@ -14,7 +14,7 @@ namespace ConsoleAppAchivers
         static void Main(string[] args)
         {
 
-            MyClass1 obj = new MyClass1();
+            //MyClass1 obj = new MyClass1();
             //Console.WriteLine("Hello, World!");
             //Console.WriteLine("Test");
             //Console.WriteLine("We are ABout to Start C#");
@@ -141,11 +141,39 @@ namespace ConsoleAppAchivers
             ////p150 p2 50 = 100
 
 
-            AccProject acc = new AccProject();
-            acc.Loreal();
+            //AccProject acc = new AccProject();
+            //acc.Loreal();
 
-            Mobile m = new Mobile();
-            m.MobileData();
+            //Mobile m = new Mobile();
+            //m.MobileData();
+
+           /* GenMethods obj = new GenMethods();
+            obj.Test(2,2);
+            obj.Test(234.45,45.45m);
+            obj.Test("hi", "tets");
+
+            obj.Test(45,45);
+            obj.GetData<int>(345);
+            obj.GetData<string>("hi");
+            obj.GetData<bool>(true);
+
+            obj.GetData<int, int>(45,45);
+            obj.GetData<int,string>(34,"hi");
+
+            obj.GetResults<int, string, bool>(345,"hi",true);
+
+            GenClass1<int, int> g = new GenClass1<int, int>();
+            g.Gen(34,45);
+            g.Gen1(34,45);
+            g.Gen2("hi","w4");
+
+            GenClass1<int, string> g1 = new ConsoleAppAchivers.GenClass1<int,string>();
+            g1.Gen(345,"");
+           */
+
+            Collections obj = new Collections();
+            obj.HoldEmpData();
+            
         }
     }
 }
