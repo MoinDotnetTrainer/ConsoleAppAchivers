@@ -147,33 +147,116 @@ namespace ConsoleAppAchivers
             //Mobile m = new Mobile();
             //m.MobileData();
 
-           /* GenMethods obj = new GenMethods();
-            obj.Test(2,2);
-            obj.Test(234.45,45.45m);
-            obj.Test("hi", "tets");
+            /* GenMethods obj = new GenMethods();
+             obj.Test(2,2);
+             obj.Test(234.45,45.45m);
+             obj.Test("hi", "tets");
 
-            obj.Test(45,45);
-            obj.GetData<int>(345);
-            obj.GetData<string>("hi");
-            obj.GetData<bool>(true);
+             obj.Test(45,45);
+             obj.GetData<int>(345);
+             obj.GetData<string>("hi");
+             obj.GetData<bool>(true);
 
-            obj.GetData<int, int>(45,45);
-            obj.GetData<int,string>(34,"hi");
+             obj.GetData<int, int>(45,45);
+             obj.GetData<int,string>(34,"hi");
 
-            obj.GetResults<int, string, bool>(345,"hi",true);
+             obj.GetResults<int, string, bool>(345,"hi",true);
 
-            GenClass1<int, int> g = new GenClass1<int, int>();
-            g.Gen(34,45);
-            g.Gen1(34,45);
-            g.Gen2("hi","w4");
+             GenClass1<int, int> g = new GenClass1<int, int>();
+             g.Gen(34,45);
+             g.Gen1(34,45);
+             g.Gen2("hi","w4");
 
-            GenClass1<int, string> g1 = new ConsoleAppAchivers.GenClass1<int,string>();
-            g1.Gen(345,"");
-           */
+             GenClass1<int, string> g1 = new ConsoleAppAchivers.GenClass1<int,string>();
+             g1.Gen(345,"");
+            */
 
-            Collections obj = new Collections();
-            obj.HoldEmpData();
-            
+            // Collections obj = new Collections();
+            //obj.HoldEmpData();
+
+
+            /* // single cast
+             DelegatesExample obj = new DelegatesExample();
+             Cal1 d1 = new Cal1(obj.Add);
+             d1.Invoke();
+             Cal1 d2 = new Cal1(obj.Sub);
+             d2.Invoke();
+
+             // single instace of dele invoking signle method
+
+             Cal2 d3 = new Cal2(DelegatesExample.mul);
+             d3.Invoke(34,45);
+             Cal2 d4 = new Cal2(DelegatesExample.Div);
+             d4.Invoke(34,45);
+
+             // multi cast
+
+             Cal1 d5 = new Cal1(obj.Add);
+             d5 += new Cal1(obj.Sub);
+             d5.Invoke();
+
+
+             Cal2 d6 = new Cal2(DelegatesExample.mul);
+             d6 += new Cal2(DelegatesExample.Div);
+             d6.Invoke(34,4);
+
+             */
+            /*// Add method will be called
+             Cal1 d2 = new Cal1(obj.Sub);
+             d2.Invoke();  // Sub method will be called
+             Func<int, int, int> d3 = new Func<int, int, int>(obj.mul);
+             int res = d3.Invoke(34, 45);  // Mul method will be called
+             Console.WriteLine(res);
+             Func<int, int, int> d4 = new Func<int, int, int>(obj.Div);
+             int result = d4.Invoke(34, 45);  // Div method will be called
+             Console.WriteLine(result);
+            */
+
+            /*
+            test t = delegate ()
+            {
+                Console.WriteLine("print data");
+            };
+            t.Invoke();
+
+
+            test t1 = () =>
+            {
+                Console.WriteLine("unnamemethod");
+            };
+            t1.Invoke();
+            */
+
+            // test1 is having
+            /*
+                        test1 t2 = delegate (int x, int y)
+                        {
+                            Console.WriteLine("print data1");
+                            return x + y;
+                        };
+                        t2.Invoke(23, 43);
+
+
+                        test1 t3 = (int x, int y) =>
+                        {
+                            Console.WriteLine("unnamemethod1");
+                            return x + y;
+                        };
+                        t3.Invoke(24, 45);
+
+                        */
+
+            //   WordCount obj = new WordCount();
+            // obj.Exe();
+
+            //Task t = new Task(obj.Exe1);
+            //t.Start();
+            //t.Wait();
+            //Console.ReadLine();
+
+            LINQTutoriuals.Test();
+
+
         }
     }
 }
