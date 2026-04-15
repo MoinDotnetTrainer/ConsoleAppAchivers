@@ -48,6 +48,28 @@ namespace ConsoleAppAchivers
                 new Student{ID= 110,FirstName = "Saurav",LastName = "Rout",Branch = "CSE",Age=23}
             };
 
+            var myrec = (from s in listStudents select s).First(x => x.FirstName == "Preety");
+            Console.WriteLine(myrec.ID);
+
+            //foreach (var item in myrec)
+            //{
+            //    Console.WriteLine($"ID id {item.ID} name is {item.FirstName} lastname is {item.LastName} Branch id {item.Branch} and age is {item.Age}");
+            //}
+
+            List<Student> listStudents1 = new List<Student>()
+            {
+                new Student{ID= 111,FirstName = "Preety",LastName = "Tiwary",Branch = "CSE",Age=35},
+                new Student{ID= 123,FirstName = "Preety",LastName = "Agrawal",Branch = "ETC",Age=35},
+                new Student{ID= 145,FirstName = "Priyanka",LastName = "Dewangan",Branch = "ETC",Age=46},
+                new Student{ID= 104,FirstName = "Hina",LastName = "Sharma",Branch = "ETC",Age=45 },
+                new Student{ID= 105,FirstName = "Anugrag",LastName = "Mohanty",Branch = "CSE",Age=45},
+                new Student{ID= 106,FirstName = "Anurag",LastName = "Sharma",Branch = "CSE",Age=34},
+                new Student{ID= 107,FirstName = "Pranaya",LastName = "Kumar",Branch = "CSE",Age=23},
+                new Student{ID= 108,FirstName = "Manoj",LastName = "Kumar",Branch = "ETC",Age=33 },
+                new Student{ID= 109,FirstName = "Pranaya",LastName = "Rout",Branch = "ETC",Age=34},
+                new Student{ID= 110,FirstName = "Saurav",LastName = "Rout",Branch = "CSE",Age=23}
+            };
+
             var res2 = from s in listStudents select s;
 
             var res3 = from s1 in listStudents
@@ -97,7 +119,7 @@ namespace ConsoleAppAchivers
 
             int[] arr2 = { 354, 55, 354, 55, 45, 6, 6, 6, 6, 354, 55, 45, 6, 76, 77, 8, 9, 89, 90, 45, 56, 7, 67, 8, 787, 898, 9 };
 
-            int[] arr3 = { 354, 55, 354, 55, 45, 6, 6, 6, 6, 67,789,79,8,9, 89, 90, 45, 56, 7, 67, 8, 787, 898, 9 };
+            int[] arr3 = { 354, 55, 354, 55, 45, 6, 6, 6, 6, 67, 789, 79, 8, 9, 89, 90, 45, 56, 7, 67, 8, 787, 898, 9 };
 
 
             var merge = arr2.Union(arr3); // remove duplicates
@@ -106,7 +128,152 @@ namespace ConsoleAppAchivers
             var Intersect = arr2.Intersect(arr3); // unique frpm left 
             foreach (var item in Intersect)
             {
+                // Console.WriteLine(item);
+            }
+
+
+            var myr = listStudents.UnionBy(listStudents1, p => p.ID);
+            foreach (var item in myr)
+            {
+                //  Console.WriteLine($"ID id {item.ID} name is {item.FirstName} lastname is {item.LastName} Branch id {item.Branch} and age is {item.Age}");
+            }
+
+            int[] arr4 = { 354, 55, 354, 55, 45, 6, 6, 6, 6, 67, 789, 79, 8, 9, 89, 90, 45, 56, 7, 67, 8, 787, 898, 9 };
+
+
+            var allEx = (from s in arr4 select s).All(x => x > 1);  // t
+
+            var anyex = (from s in arr4 select s).Any(x => x > 50);
+
+            var containEx = (from s in arr4 select s).Contains(6777);
+            //  Console.WriteLine(containEx);
+
+            var nums = new List<int> { 2, 4, 6, 8 };
+
+            bool allEven = nums.All(x => x % 2 == 0);  // true
+                                                       // Console.WriteLine(allEven);
+
+
+
+            int[] arr5 = { 43, 65, 4, 64, 65, 756, 767, 8, 67899 };
+
+
+            // elementat = (from s in arr5 select s).ElementAt(3);  // 55  
+            //var elementat1 = (from s in arr5 select s).ElementAtOrDefault(3000);  // deault value of int is 0     
+            // Console.WriteLine(elementat);
+
+
+            var first = (from s in arr5 select s).First();
+            var firstordef = (from s in arr5 select s).FirstOrDefault();
+
+            var first1 = (from s in arr5 select s).First(x => x < 50);
+            var firstordef1 = (from s in arr5 select s).FirstOrDefault();
+
+            var last = (from s in arr5 select s).Last();  // 8
+            var lastordef = (from s in arr5 select s).LastOrDefault();
+
+            // var single = (from s in arr5 select s).SingleOrDefault(x => x > 500);  // 
+
+            //   Console.WriteLine(single);
+
+            int[] arr6 = { 43, 65, 500, 4, 64, 65, 756, 767, 8, 67899 };
+            var take = (from s in arr6 select s).Take(5);
+            var skip = (from s in arr6 select s).Skip(5);
+
+            var take1 = (from s in arr6 select s).TakeWhile(x => x > 50);
+            var skip1 = (from s in arr6 select s).SkipWhile(x => x > 346);
+            foreach (var item in skip1)
+            {
                 Console.WriteLine(item);
+            }
+
+        }
+
+        public static void Orderby()
+        {
+            List<Student> listStudents = new List<Student>()
+            {
+                new Student{ID= 101,FirstName = "Preety",LastName = "Tiwary",Branch = "CSE",Age=35},
+                new Student{ID= 102,FirstName = "Preety",LastName = "Agrawal",Branch = "ETC",Age=35},
+                new Student{ID= 103,FirstName = "Priyanka",LastName = "Dewangan",Branch = "ETC",Age=46},
+                new Student{ID= 104,FirstName = "Hina",LastName = "Sharma",Branch = "ETC",Age=45 },
+                new Student{ID= 105,FirstName = "Anugrag",LastName = "Mohanty",Branch = "CSE",Age=45},
+                new Student{ID= 106,FirstName = "Anurag",LastName = "Sharma",Branch = "CSE",Age=34},
+                new Student{ID= 107,FirstName = "Pranaya",LastName = "Kumar",Branch = "CSE",Age=23},
+                new Student{ID= 108,FirstName = "Manoj",LastName = "Kumar",Branch = "ETC",Age=33 },
+                new Student{ID= 109,FirstName = "Pranaya",LastName = "Rout",Branch = "ETC",Age=34},
+                new Student{ID= 110,FirstName = "Saurav",LastName = "Rout",Branch = "CSE",Age=23}
+            };
+
+            var orderby = from s in listStudents orderby s.FirstName descending select s;
+            var thenby = listStudents.OrderBy(x => x.FirstName)
+                .ThenByDescending(x => x.LastName);
+            foreach (var item in thenby)
+            {
+                //  Console.WriteLine($"ID id {item.ID} name is {item.FirstName} lastname is {item.LastName} Branch id {item.Branch} and age is {item.Age}");
+            }
+
+
+            var whereex = from s in listStudents
+                          where s.Age > 30
+                          orderby s.FirstName
+                          select s; // 9 stu
+
+
+
+            var countEx = (from s in listStudents
+                           where s.Age > 30
+                           orderby s.FirstName
+                           select s).Count();  // 8  // stared & end
+
+
+
+            var groupby = from s in listStudents group s by s.Branch;
+            var lookup = listStudents.ToLookup(x => x.Branch);
+
+            listStudents.Add(new Student
+            {
+                ID = 109,
+                FirstName = "xyz",
+                LastName = "Rout",
+                Branch = "ETC",
+                Age = 34
+            });
+
+            listStudents.Add(new Student
+            {
+                ID = 110,
+                FirstName = "abc",
+                LastName = "Rout",
+                Branch = "CSE",
+                Age = 23
+            });
+            //foreach (var item in whereex)
+            //{
+            //    Console.WriteLine($"ID id {item.ID} name is {item.FirstName} lastname is {item.LastName} Branch id {item.Branch} and age is {item.Age}");
+            //}
+
+            //Console.WriteLine(countEx);
+
+            foreach (var item in groupby)
+            {
+                Console.WriteLine(item.Key);
+                foreach (var item1 in item)
+                {
+                    Console.WriteLine($"ID id {item1.ID} name is {item1.FirstName} lastname is {item1.LastName} Branch id {item1.Branch} and age is {item1.Age}");
+
+                }
+            }
+            Console.WriteLine("Lookup");
+            
+            foreach (var item in lookup)
+            {
+                Console.WriteLine(item.Key);
+                foreach (var item1 in item)
+                {
+                    Console.WriteLine($"ID id {item1.ID} name is {item1.FirstName} lastname is {item1.LastName} Branch id {item1.Branch} and age is {item1.Age}");
+
+                }
             }
         }
     }

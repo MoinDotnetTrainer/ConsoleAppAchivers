@@ -254,7 +254,7 @@ namespace ConsoleAppAchivers
             //t.Wait();
             //Console.ReadLine();
 
-            LINQTutoriuals.Test();
+            LINQTutoriuals.Orderby();
 
 
         }
